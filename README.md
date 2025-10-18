@@ -70,7 +70,7 @@ Player (Empty GameObject)
 
 6. Set up Ground Layer and assign to Ground Mask in FirstPersonController
 
-**See [SETUP_GUIDE.md](SETUP_GUIDE.md) for detailed instructions**
+**See SETUP_GUIDE.md in the project for detailed instructions**
 
 ## ⚙️ Key Configuration Options
 
