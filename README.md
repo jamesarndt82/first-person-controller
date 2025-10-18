@@ -2,7 +2,7 @@
 
 A production-ready, feature-rich first-person character controller for Unity using the **New Input System** and optimized for **Universal Render Pipeline (URP)**.
 
-## ✨ Features
+## Features
 
 - **Multiple Stances**: Standing, crouching, and prone with smooth transitions
 - **Sprint System**: Hold-to-sprint with configurable speeds
@@ -15,7 +15,7 @@ A production-ready, feature-rich first-person character controller for Unity usi
 - **Air Control**: Maintains some movement control while airborne
 - **New Input System**: Uses Unity's modern Input System for better flexibility and rebinding support
 
-## 🎮 Controls (Default)
+## Controls (Default)
 
 | Action | Binding |
 |--------|---------|
@@ -27,7 +27,7 @@ A production-ready, feature-rich first-person character controller for Unity usi
 | Jump | Space (standing only) |
 | Toggle Cursor | Escape |
 
-## 📦 What's Included
+## What's Included
 
 - `FirstPersonController.cs` - Character movement and stance system
 - `FirstPersonCamera.cs` - Camera control with head bob and tilt
@@ -35,7 +35,7 @@ A production-ready, feature-rich first-person character controller for Unity usi
 - `HeadBobVisualizer.cs` - Optional visual tuning tool for head bob
 - `SETUP_GUIDE.md` - Comprehensive setup and configuration documentation
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - Unity 2021.3 or later
@@ -97,7 +97,7 @@ Player (Empty GameObject)
 - Automatic collision checking prevents standing in tight spaces
 - Smooth transitions with configurable speed
 
-## 🎯 Performance
+## Performance
 
 - Uses `CharacterController` instead of Rigidbody for optimal performance
 - Event-driven input reduces Update() overhead
@@ -116,7 +116,7 @@ The system is designed for easy extension:
 - **Gamepad Support**: Add bindings in Input Actions asset
 - **Custom Actions**: Easily add new input actions to the asset
 
-## 📝 Architecture
+## Architecture
 
 Built with clean separation of concerns:
 - **FirstPersonController**: Handles all character physics and movement
@@ -125,7 +125,7 @@ Built with clean separation of concerns:
 
 The modular design allows you to swap or modify individual components without affecting others.
 
-## 🐛 Debugging
+## Debugging
 
 Use the included **HeadBobVisualizer** for real-time head bob tuning:
 1. Attach `HeadBobVisualizer.cs` to your Camera
@@ -137,21 +137,21 @@ For input debugging:
 - Watch actions activate in real-time
 - Verify bindings and connected devices
 
-## 📋 Requirements
+## Requirements
 
 - Unity 2021.3+
 - Input System package
 - Universal Render Pipeline (optional, but optimized for it)
 
-## 📄 License
+## License
 
 [Your chosen license]
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Feel free to submit issues or pull requests.
 
-## 📚 Additional Resources
+## Additional Resources
 
 - [Unity Input System Documentation](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.7/manual/index.html)
 - [CharacterController API Reference](https://docs.unity3d.com/ScriptReference/CharacterController.html)
