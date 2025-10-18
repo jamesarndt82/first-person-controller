@@ -246,8 +246,8 @@ MonoBehaviour:
   sprintSpeed: 12
   crouchSpeed: 2.5
   proneSpeed: 1.5
-  acceleration: 12
-  deceleration: 12
+  acceleration: 15
+  deceleration: 15
   airControl: 0.2
   jumpHeight: 1
   gravity: -24
@@ -294,7 +294,7 @@ MonoBehaviour:
   bobSmoothing: 8
   sprintBobFrequencyMultiplier: 1.35
   sprintBobAmplitudeMultiplier: 1.15
-  crouchBobReduction: 0.5
+  crouchBobReduction: 0.4
   proneBobReduction: 0.3
   enableCameraTilt: 1
   tiltAngle: 1
