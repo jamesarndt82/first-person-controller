@@ -26,9 +26,13 @@ public class FirstPersonCamera : MonoBehaviour
     [Header("Head Bob Settings")]
     [SerializeField] private bool enableHeadBob = true;
     [SerializeField] private float bobFrequency = 2f;
-    [SerializeField] private float bobAmplitude = 0.05f;
+    [SerializeField] private float bobHorizontalAmplitude = 0.05f;
+    [SerializeField] private float bobVerticalAmplitude = 0.05f;
     [SerializeField] private float bobSmoothing = 10f;
-    [SerializeField] private float sprintBobMultiplier = 1.5f;
+    [SerializeField] private float sprintBobFrequencyMultiplier = 1.5f;
+    [SerializeField] private float sprintBobAmplitudeMultiplier = 1.2f;
+    [SerializeField] private float crouchBobReduction = 0.5f;
+    [SerializeField] private float proneBobReduction = 0.3f;
 
     [Header("Camera Tilt Settings")]
     [SerializeField] private bool enableCameraTilt = true;
@@ -180,16 +184,34 @@ public class FirstPersonCamera : MonoBehaviour
         
         if (speed > 0.1f)
         {
-            float bobMultiplier = 1f;
+            float frequencyMultiplier = 1f;
+            float amplitudeMultiplier = 1f;
+            
+            // Apply sprint multipliers
             if (characterController.IsSprinting && characterController.CurrentStance == FirstPersonController.MovementStance.Standing)
             {
-                bobMultiplier = sprintBobMultiplier;
+                frequencyMultiplier = sprintBobFrequencyMultiplier;
+                amplitudeMultiplier = sprintBobAmplitudeMultiplier;
             }
 
-            bobTimer += Time.deltaTime * bobFrequency * bobMultiplier;
+            // Apply stance-based reduction
+            switch (characterController.CurrentStance)
+            {
+                case FirstPersonController.MovementStance.Crouching:
+                    amplitudeMultiplier *= crouchBobReduction;
+                    break;
+                case FirstPersonController.MovementStance.Prone:
+                    amplitudeMultiplier *= proneBobReduction;
+                    break;
+            }
+
+            bobTimer += Time.deltaTime * bobFrequency * frequencyMultiplier;
             
-            float horizontalBob = Mathf.Sin(bobTimer) * bobAmplitude * bobMultiplier;
-            float verticalBob = Mathf.Sin(bobTimer * 2f) * bobAmplitude * 0.5f * bobMultiplier;
+            // Horizontal bob (side to side)
+            float horizontalBob = Mathf.Sin(bobTimer) * bobHorizontalAmplitude * amplitudeMultiplier;
+            
+            // Vertical bob (up and down) - uses 2x frequency for more natural gait
+            float verticalBob = Mathf.Sin(bobTimer * 2f) * bobVerticalAmplitude * amplitudeMultiplier;
             
             Vector3 targetBob = new Vector3(horizontalBob, verticalBob, 0f);
             bobOffset = Vector3.Lerp(bobOffset, targetBob, bobSmoothing * Time.deltaTime);

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ec995e51a6e251468d2a3fd8a686257, type: 3}
-  m_Name: UniversalRenderPipelineGlobalSettings
+  m_Name: RenderPipelineGlobalSettings
   m_EditorClassIdentifier: 
   m_ShaderStrippingSetting:
     m_Version: 0
@@ -63,7 +63,21 @@ MonoBehaviour:
       - rid: 1054144002947809287
       - rid: 1054144002947809288
     m_RuntimeSettings:
-      m_List: []
+      m_List:
+      - rid: 6852985685364965378
+      - rid: 6852985685364965379
+      - rid: 6852985685364965380
+      - rid: 6852985685364965381
+      - rid: 6852985685364965384
+      - rid: 6852985685364965385
+      - rid: 6852985685364965392
+      - rid: 6852985685364965394
+      - rid: 8712630790384254976
+      - rid: 1054144002947809281
+      - rid: 1054144002947809283
+      - rid: 1054144002947809284
+      - rid: 1054144002947809287
+      - rid: 1054144002947809288
   m_AssetVersion: 8
   m_ObsoleteDefaultVolumeProfile: {fileID: 0}
   m_RenderingLayerNames:

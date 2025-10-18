@@ -43,8 +43,8 @@ Camera:
   m_GameObject: {fileID: 1934072038297579435}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.097500004, g: 0.11500002, b: 0.15, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -116,7 +116,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 1
+  m_RenderPostProcessing: 0
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -181,6 +181,7 @@ GameObject:
   - component: {fileID: 3652560881566393726}
   - component: {fileID: 541606188601593014}
   - component: {fileID: 5314349968535091760}
+  - component: {fileID: 1225350959827414745}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -241,8 +242,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3095bb55054f69740898c3c82e00517e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FirstPersonController
-  walkSpeed: 5
-  sprintSpeed: 8
+  walkSpeed: 6
+  sprintSpeed: 10
   crouchSpeed: 2.5
   proneSpeed: 1.5
   acceleration: 12
@@ -251,9 +252,9 @@ MonoBehaviour:
   jumpHeight: 1
   gravity: -24
   standingHeight: 1.8
-  crouchingHeight: 1.2
+  crouchingHeight: 1
   proneHeight: 0.5
-  stanceTransitionSpeed: 12
+  stanceTransitionSpeed: 15
   standingCenter: {x: 0, y: 0, z: 0}
   crouchingCenter: {x: 0, y: -0.4, z: 0}
   proneCenter: {x: 0, y: -0.7, z: 0}
@@ -278,20 +279,42 @@ MonoBehaviour:
   playerCamera: {fileID: 5670418652718953138}
   characterController: {fileID: 541606188601593014}
   mouseSensitivity: 4
-  lookSmoothness: 20
+  lookSmoothness: 25
   invertY: 0
   minVerticalAngle: -90
   maxVerticalAngle: 90
-  standingCameraHeight: 0.7
-  crouchingCameraHeight: 0.3
+  standingCameraHeight: 1.8
+  crouchingCameraHeight: 0.6
   proneCameraHeight: -0.3
   cameraHeightTransitionSpeed: 8
   enableHeadBob: 1
   bobFrequency: 8.5
-  bobAmplitude: 0.07
-  bobSmoothing: 5
-  sprintBobMultiplier: 1.2
+  bobHorizontalAmplitude: 0.07
+  bobVerticalAmplitude: 0.04
+  bobSmoothing: 6
+  sprintBobFrequencyMultiplier: 1.5
+  sprintBobAmplitudeMultiplier: 1.2
+  crouchBobReduction: 0.5
+  proneBobReduction: 0.3
   enableCameraTilt: 1
   tiltAngle: 1
   tiltSpeed: 4
   inputActions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+--- !u!114 &1225350959827414745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9138241901291428614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 633de63a241238740890e977352af862, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HeadBobVisualizer
+  showGizmos: 0
+  horizontalBobColor: {r: 0, g: 1, b: 1, a: 1}
+  verticalBobColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  centerColor: {r: 0, g: 1, b: 0, a: 1}
+  gizmoScale: 2
+  cameraController: {fileID: 5314349968535091760}
