@@ -1,6 +1,6 @@
 {
     "version": 1,
-    "name": "PlayerInputActions",
+    "name": "FPSInputActions",
     "maps": [
         {
             "name": "Player",
