@@ -116,11 +116,11 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
-  m_Antialiasing: 0
+  m_RenderPostProcessing: 1
+  m_Antialiasing: 2
   m_AntialiasingQuality: 2
   m_StopNaN: 0
-  m_Dithering: 0
+  m_Dithering: 1
   m_ClearDepth: 1
   m_AllowXRRendering: 1
   m_AllowHDROutput: 1
@@ -223,7 +223,7 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 1.8
+  m_Height: 2
   m_Radius: 0.3
   m_SlopeLimit: 45
   m_StepOffset: 0.3
@@ -243,7 +243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FirstPersonController
   walkSpeed: 6
-  sprintSpeed: 10
+  sprintSpeed: 12
   crouchSpeed: 2.5
   proneSpeed: 1.5
   acceleration: 12
@@ -279,21 +279,21 @@ MonoBehaviour:
   playerCamera: {fileID: 5670418652718953138}
   characterController: {fileID: 541606188601593014}
   mouseSensitivity: 4
-  lookSmoothness: 25
+  lookSmoothness: 30
   invertY: 0
-  minVerticalAngle: -90
-  maxVerticalAngle: 90
+  minVerticalAngle: -70
+  maxVerticalAngle: 60
   standingCameraHeight: 1.8
   crouchingCameraHeight: 0.6
   proneCameraHeight: -0.3
   cameraHeightTransitionSpeed: 8
   enableHeadBob: 1
-  bobFrequency: 8.5
-  bobHorizontalAmplitude: 0.07
-  bobVerticalAmplitude: 0.04
-  bobSmoothing: 6
-  sprintBobFrequencyMultiplier: 1.5
-  sprintBobAmplitudeMultiplier: 1.2
+  bobFrequency: 8
+  bobHorizontalAmplitude: 0.04
+  bobVerticalAmplitude: 0.05
+  bobSmoothing: 8
+  sprintBobFrequencyMultiplier: 1.35
+  sprintBobAmplitudeMultiplier: 1.15
   crouchBobReduction: 0.5
   proneBobReduction: 0.3
   enableCameraTilt: 1
